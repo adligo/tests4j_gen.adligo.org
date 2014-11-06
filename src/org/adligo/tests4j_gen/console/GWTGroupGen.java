@@ -1,6 +1,6 @@
 package org.adligo.tests4j_gen.console;
 
-import org.adligo.tests4j.models.shared.reference_groups.gwt.v2_6.GWT_2_6_Log;
+import org.adligo.gwt_refs.v2_6.GWT_2_6_Log;
 import org.adligo.tests4j.models.shared.reference_groups.jse.JSE_Lang;
 import org.adligo.tests4j.models.shared.reference_groups.jse.JSE_Util;
 
