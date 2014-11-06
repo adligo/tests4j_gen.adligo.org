@@ -1,18 +1,18 @@
-package org.adligo.tests4j_gen;
+package org.adligo.tests4j_gen.console;
+
+import org.adligo.tests4j.shared.asserts.reference.ClassAttributes;
+import org.adligo.tests4j.shared.asserts.reference.ClassAttributesMutant;
+import org.adligo.tests4j.shared.asserts.reference.FieldSignature;
+import org.adligo.tests4j.shared.asserts.reference.I_ClassAttributes;
+import org.adligo.tests4j.shared.asserts.reference.I_FieldSignature;
+import org.adligo.tests4j.shared.asserts.reference.I_MethodSignature;
+import org.adligo.tests4j.shared.asserts.reference.MethodSignature;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Set;
-
-import org.adligo.tests4j.shared.asserts.dependency.ClassAttributes;
-import org.adligo.tests4j.shared.asserts.dependency.ClassAttributesMutant;
-import org.adligo.tests4j.shared.asserts.dependency.FieldSignature;
-import org.adligo.tests4j.shared.asserts.dependency.I_ClassAttributes;
-import org.adligo.tests4j.shared.asserts.dependency.I_FieldSignature;
-import org.adligo.tests4j.shared.asserts.dependency.I_MethodSignature;
-import org.adligo.tests4j.shared.asserts.dependency.MethodSignature;
 
 /**
  * this should filter out the parent material

@@ -1,13 +1,6 @@
-package org.adligo.tests4j_gen;
+package org.adligo.tests4j_gen.console;
 
 import java.io.PrintStream;
-import java.util.Set;
-
-import org.adligo.tests4j.shared.asserts.dependency.I_ClassAttributes;
-import org.adligo.tests4j.shared.asserts.dependency.I_FieldSignature;
-import org.adligo.tests4j.shared.asserts.dependency.I_MethodSignature;
-import org.adligo.tests4j.shared.asserts.dependency.MethodSignature;
-import org.adligo.tests4j.shared.common.Tests4J_System;
 
 /**
  * this class generates a sibling
@@ -30,7 +23,7 @@ public class NameOnlyGen {
 		constantLookup = ctx.getConstantLookup();
 		String packageName = ctx.getTrialPackageName();
 		
-			out.println("\t\tnames.add(\"" + clazz.getName() + "\");");
+			out.println("    names.add(\"" + clazz.getName() + "\");");
 			
 		
 	}

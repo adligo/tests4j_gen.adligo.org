@@ -1,20 +1,18 @@
-package org.adligo.tests4j_gen;
+package org.adligo.tests4j_gen.console;
 
-import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
-import org.adligo.tests4j.models.shared.dependency.I_ClassDependencies;
+import org.adligo.tests4j.models.shared.association.I_ClassAssociations;
 import org.adligo.tests4j.models.shared.results.I_SourceFileTrialResult;
-import org.adligo.tests4j.shared.asserts.dependency.I_ClassAttributes;
-import org.adligo.tests4j.shared.asserts.dependency.I_FieldSignature;
-import org.adligo.tests4j.shared.asserts.dependency.I_MethodSignature;
+import org.adligo.tests4j.shared.asserts.reference.I_ClassAttributes;
+import org.adligo.tests4j.shared.asserts.reference.I_FieldSignature;
+import org.adligo.tests4j.shared.asserts.reference.I_MethodSignature;
 import org.adligo.tests4j.shared.common.StringMethods;
 import org.adligo.tests4j.system.shared.trials.SourceFileScope;
 import org.adligo.tests4j.system.shared.trials.SourceFileTrial;
 import org.adligo.tests4j.system.shared.trials.Test;
 import org.adligo.tests4j.system.shared.trials.TrialDelegate;
+
+import java.io.PrintStream;
+import java.util.Set;
 
 public class ClassUseTrialGen {
 
@@ -44,7 +42,7 @@ public class ClassUseTrialGen {
 		out.println("import " + I_FieldSignature.class.getName() + ";");
 		out.println("import " + I_MethodSignature.class.getName() + ";");
 		out.println("import " + I_SourceFileTrialResult.class.getName() + ";");
-		out.println("import " + I_ClassDependencies.class.getName() + ";");
+		out.println("import " + I_ClassAssociations.class.getName() + ";");
 		out.println("import " + I_ClassAttributes.class.getName() + ";");
 		
 		out.println("");

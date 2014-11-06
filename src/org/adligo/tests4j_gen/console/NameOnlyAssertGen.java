@@ -1,13 +1,6 @@
-package org.adligo.tests4j_gen;
+package org.adligo.tests4j_gen.console;
 
 import java.io.PrintStream;
-import java.util.Set;
-
-import org.adligo.tests4j.shared.asserts.dependency.I_ClassAttributes;
-import org.adligo.tests4j.shared.asserts.dependency.I_FieldSignature;
-import org.adligo.tests4j.shared.asserts.dependency.I_MethodSignature;
-import org.adligo.tests4j.shared.asserts.dependency.MethodSignature;
-import org.adligo.tests4j.shared.common.Tests4J_System;
 
 /**
  * this class generates a sibling
@@ -28,7 +21,7 @@ public class NameOnlyAssertGen {
 	 */
 	public void gen(Class<?> clazz, PrintStream out, GenDepGroupContext ctx) {
 		constantLookup = ctx.getConstantLookup();
-		out.println("\t\tassertContains(names,\"" + clazz.getName() + "\");");
+		out.println("    assertContains(names,\"" + clazz.getName() + "\");");
 		
 	}
 	

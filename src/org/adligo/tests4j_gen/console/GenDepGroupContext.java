@@ -1,4 +1,4 @@
-package org.adligo.tests4j_gen;
+package org.adligo.tests4j_gen.console;
 
 
 public class GenDepGroupContext {
@@ -9,11 +9,17 @@ public class GenDepGroupContext {
 	private String trialClass_ = "org.adligo.tests4j.models.shared.trials.SourceFileTrial";
 	private String trialClassSimple_ = "SourceFileTrial";
 	private String packageConstantsLookupName_ = "PackageConstantsLookupName";
-	
+	private String constantsLookupInterfaceName = "ConstantsLookupInterfaceName";
 	private String extraTrialContent_ = "";
 	private String extraTrialAnnotations_ = "";
 
-	private boolean runConstantGen_ = true;
+	private boolean runConstantClassAttributeMethodGen_ = true;
+	private boolean runConstantNameOnlyGen_ = true;
+	private boolean runConstantNameOnlyAssertGen_ = true;
+	private boolean runConstantNameOnlyLookupGen_ = true;
+	private boolean runConstantNameOnlyLookupAssertGen_ = true;
+	private boolean runDelegateInGroupAssertGen_ = true;
+	
 	private boolean runConstantTrialGen_ = true;
 	private boolean runUseMockGen_ = true;
 	private boolean runUseTrialGen_ = true;
@@ -71,11 +77,11 @@ public class GenDepGroupContext {
 		extraTrialAnnotations_ = extraTrialAnnotations;
 	}
 	
-	public boolean isRunConstantGen() {
-		return runConstantGen_;
+	public boolean isRunConstantClassAttributeMethodGen() {
+		return runConstantClassAttributeMethodGen_;
 	}
-	public void setRunConstantGen(boolean runConstantGen) {
-		runConstantGen_ = runConstantGen;
+	public void setRunConstantClassAttributeMethodGen(boolean runConstantGen) {
+		runConstantClassAttributeMethodGen_ = runConstantGen;
 	}
 	public boolean isRunConstantTrialGen() {
 		return runConstantTrialGen_;
@@ -113,4 +119,40 @@ public class GenDepGroupContext {
 	public void setPackageConstantsLookupName(String packageConstantsLookupName) {
 		this.packageConstantsLookupName_ = packageConstantsLookupName;
 	}
+  public boolean isRunConstantNameOnlyGen() {
+    return runConstantNameOnlyGen_;
+  }
+  public void setRunConstantNameOnlyGen(boolean runConstantNameOnlyGen) {
+    this.runConstantNameOnlyGen_ = runConstantNameOnlyGen;
+  }
+  public boolean isRunConstantNameOnlyLookupGen() {
+    return runConstantNameOnlyLookupGen_;
+  }
+  public void setRunConstantNameOnlyLookupGen(boolean runConstantNameOnlyLookupGen) {
+    this.runConstantNameOnlyLookupGen_ = runConstantNameOnlyLookupGen;
+  }
+  public String getConstantsLookupInterfaceName() {
+    return constantsLookupInterfaceName;
+  }
+  public void setConstantsLookupInterfaceName(String constantsLookupInterfaceName) {
+    this.constantsLookupInterfaceName = constantsLookupInterfaceName;
+  }
+  public boolean isRunConstantNameOnlyAssertGen() {
+    return runConstantNameOnlyAssertGen_;
+  }
+  public void setRunConstantNameOnlyAssertGen(boolean runConstantNameOnlyAssertGen) {
+    this.runConstantNameOnlyAssertGen_ = runConstantNameOnlyAssertGen;
+  }
+  public boolean isRunConstantNameOnlyLookupAssertGen() {
+    return runConstantNameOnlyLookupAssertGen_;
+  }
+  public void setRunConstantNameOnlyLookupAssertGen(boolean runConstantNameOnlyLookupAssertGen) {
+    this.runConstantNameOnlyLookupAssertGen_ = runConstantNameOnlyLookupAssertGen;
+  }
+  public boolean isRunDelegateInGroupAssertGen() {
+    return runDelegateInGroupAssertGen_;
+  }
+  public void setRunDelegateInGroupAssertGen(boolean runDelegateInGroupAssertGen) {
+    this.runDelegateInGroupAssertGen_ = runDelegateInGroupAssertGen;
+  }
 }	

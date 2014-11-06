@@ -1,12 +1,11 @@
-package org.adligo.tests4j_gen;
+package org.adligo.tests4j_gen.console;
+
+import org.adligo.tests4j.models.shared.reference_groups.gwt.v2_6.GWT_2_6_Log;
+import org.adligo.tests4j.models.shared.reference_groups.jse.JSE_Lang;
+import org.adligo.tests4j.models.shared.reference_groups.jse.JSE_Util;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.adligo.tests4j.models.shared.dependency_groups.gwt.v2_6.GWT_2_6_Log;
-import org.adligo.tests4j.models.shared.dependency_groups.jse.JSE_Lang;
-import org.adligo.tests4j.models.shared.dependency_groups.jse.JSE_Util;
-import org.adligo.tests4j.shared.common.Tests4J_System;
 
 
 public class GWTGroupGen {
@@ -20,38 +19,38 @@ public class GWTGroupGen {
 		//ctx.setExtraTrialAnnotations("@SuppressOutput");
 		ctx.setTrialClass("org.adligo.tests4j_tests.base_trials.SourceFileCountingTrial");
 		ctx.setTrialClassSimpleName("SourceFileCountingTrial");
-		ctx.setExtraTrialContent("" + Tests4J_System.lineSeperator() +
-			"\t@Override" + Tests4J_System.lineSeperator() +
-			"\tpublic int getTests(I_CountType type) {"+ Tests4J_System.lineSeperator() +
-			"\t\treturn super.getTests(type, 1);"+ Tests4J_System.lineSeperator() +
-			"\t}"+ Tests4J_System.lineSeperator() +
-			"" + Tests4J_System.lineSeperator() +
-			"\t@Override "+ Tests4J_System.lineSeperator() +
-			"\tpublic int getAsserts(I_CountType type) { "+ Tests4J_System.lineSeperator() +
-			"\t\tint thisAsserts = 1;"+ Tests4J_System.lineSeperator() +
-			"\t\t//code coverage and circular dependencies +"+ Tests4J_System.lineSeperator() +
-			"\t\t//custom afterTrialTests"+ Tests4J_System.lineSeperator() +
-			"\t\t//+ see above"+ Tests4J_System.lineSeperator() +
-			"\t\tint thisAfterAsserts = 24;"+ Tests4J_System.lineSeperator() +
-			"\t\tif (type.isFromMetaWithCoverage()) {"+ Tests4J_System.lineSeperator() +
-			"\t\t\treturn super.getAsserts(type, thisAsserts + thisAfterAsserts);"+ Tests4J_System.lineSeperator() +
-			"\t\t} else {"+ Tests4J_System.lineSeperator() +
-			"\t\t\treturn super.getAsserts(type, thisAsserts);"+ Tests4J_System.lineSeperator() +
-			"\t\t}"+ Tests4J_System.lineSeperator() +
-			"\t}"+ Tests4J_System.lineSeperator() +
-			"" + Tests4J_System.lineSeperator() +
-			"\t@Override"+ Tests4J_System.lineSeperator() +
-			"\tpublic int getUniqueAsserts(I_CountType type) {"+ Tests4J_System.lineSeperator() +
-			"\t\tint uAsserts = 1;"+ Tests4J_System.lineSeperator() +
-			"\t\t//code coverage and circular dependencies +"+ Tests4J_System.lineSeperator() +
-			"\t\t//custom afterTrialTests"+ Tests4J_System.lineSeperator() +
-			"\t\t//+ see above"+ Tests4J_System.lineSeperator() +
-			"\t\tint uAfterAsserts = 24;"+ Tests4J_System.lineSeperator() +
-			"\t\tif (type.isFromMetaWithCoverage()) {"+ Tests4J_System.lineSeperator() +
-			"\t\t\treturn super.getAsserts(type, uAsserts + uAfterAsserts);"+ Tests4J_System.lineSeperator() +
-			"\t\t} else {"+ Tests4J_System.lineSeperator() +
-			"\t\t\treturn super.getAsserts(type, uAsserts);"+ Tests4J_System.lineSeperator() +
-			"\t\t}"+ Tests4J_System.lineSeperator() +
+		ctx.setExtraTrialContent("" + System.lineSeparator() +
+			"\t@Override" + System.lineSeparator() +
+			"\tpublic int getTests(I_CountType type) {"+ System.lineSeparator() +
+			"\t\treturn super.getTests(type, 1);"+ System.lineSeparator() +
+			"\t}"+ System.lineSeparator() +
+			"" + System.lineSeparator() +
+			"\t@Override "+ System.lineSeparator() +
+			"\tpublic int getAsserts(I_CountType type) { "+ System.lineSeparator() +
+			"\t\tint thisAsserts = 1;"+ System.lineSeparator() +
+			"\t\t//code coverage and circular dependencies +"+ System.lineSeparator() +
+			"\t\t//custom afterTrialTests"+ System.lineSeparator() +
+			"\t\t//+ see above"+ System.lineSeparator() +
+			"\t\tint thisAfterAsserts = 24;"+ System.lineSeparator() +
+			"\t\tif (type.isFromMetaWithCoverage()) {"+ System.lineSeparator() +
+			"\t\t\treturn super.getAsserts(type, thisAsserts + thisAfterAsserts);"+ System.lineSeparator() +
+			"\t\t} else {"+ System.lineSeparator() +
+			"\t\t\treturn super.getAsserts(type, thisAsserts);"+ System.lineSeparator() +
+			"\t\t}"+ System.lineSeparator() +
+			"\t}"+ System.lineSeparator() +
+			"" + System.lineSeparator() +
+			"\t@Override"+ System.lineSeparator() +
+			"\tpublic int getUniqueAsserts(I_CountType type) {"+ System.lineSeparator() +
+			"\t\tint uAsserts = 1;"+ System.lineSeparator() +
+			"\t\t//code coverage and circular dependencies +"+ System.lineSeparator() +
+			"\t\t//custom afterTrialTests"+ System.lineSeparator() +
+			"\t\t//+ see above"+ System.lineSeparator() +
+			"\t\tint uAfterAsserts = 24;"+ System.lineSeparator() +
+			"\t\tif (type.isFromMetaWithCoverage()) {"+ System.lineSeparator() +
+			"\t\t\treturn super.getAsserts(type, uAsserts + uAfterAsserts);"+ System.lineSeparator() +
+			"\t\t} else {"+ System.lineSeparator() +
+			"\t\t\treturn super.getAsserts(type, uAsserts);"+ System.lineSeparator() +
+			"\t\t}"+ System.lineSeparator() +
 			"\t}"); 
 		
 		ConstantLookup cl = ctx.getConstantLookup();

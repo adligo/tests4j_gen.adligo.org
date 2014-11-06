@@ -1,4 +1,4 @@
-package org.adligo.tests4j_gen;
+package org.adligo.tests4j_gen.console;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,10 +17,18 @@ import java.util.List;
  */
 public class GroupGen {
 	private GenDepGroupContext ctx;
-	private ConstantGen constantGen = new ConstantGen();
+	private ConstantClassAttributeMethodGen constantClassAttributeMethodGen = new ConstantClassAttributeMethodGen();
+	
 	private ConstantTrialGen constantTrialGen = new ConstantTrialGen();
 	private ClassUseGen classUseGen = new ClassUseGen();
 	private ClassUseTrialGen classUseTrialGen = new ClassUseTrialGen();
+	private ConstantNameOnlyGen constantNameOnlyGen_ = new ConstantNameOnlyGen();
+	private ConstantNameOnlyAssertGen constantNameOnlyAssertGen_ = new ConstantNameOnlyAssertGen();
+  
+	private ConstantNameOnlyLookupGen constantNameOnlyLookupGen_ = new ConstantNameOnlyLookupGen();
+  private DelegateInGroupAssertGen delegateInGroupAssertGen_ = new DelegateInGroupAssertGen();
+	private ConstantNameOnlyLookupAssertGen constantNameOnlyLookupAssertGen_ = new ConstantNameOnlyLookupAssertGen();
+  
 	private NameOnlyGen nameOnlyGen = new NameOnlyGen();
 	private NameOnlyAssertGen nameOnlyAssertGen = new NameOnlyAssertGen();
 	
@@ -29,15 +37,50 @@ public class GroupGen {
 	 * @param classes
 	 */
 	public void gen(Collection<Class<?>> classes) {
+	  
+	  if (ctx.isRunConstantNameOnlyGen()) {
+	    System.out.println("4 interface ie I_JSE_1_6_Lang");
+      for (Class<?> caa: classes) {
+        constantNameOnlyGen_.gen(caa, System.out, ctx);
+      }
+    }
+	  if (ctx.isRunConstantNameOnlyAssertGen()) {
+	    System.out.println("4 trial of interface ie I_JSE_1_6_LangTrial");
+      for (Class<?> caa: classes) {
+        constantNameOnlyAssertGen_.gen(caa, System.out, ctx);
+      }
+    }
+	  
+	  if (ctx.isRunConstantNameOnlyLookupGen()) {
+	    System.out.println("4 constant class ie JSE_1_6_Lang");
+      for (Class<?> caa: classes) {
+        constantNameOnlyLookupGen_.gen(caa, System.out, ctx);
+      }
+    }
+	  
+	  if (ctx.isRunDelegateInGroupAssertGen()) {
+	    System.out.println("4 constant class ie JSE_1_6_LangTrial");
+      for (Class<?> caa: classes) {
+        delegateInGroupAssertGen_.gen(caa, System.out, ctx);
+      }
+    }
+	  
+	  if (ctx.isRunConstantNameOnlyLookupAssertGen()) {
+	    System.out.println("4 constant class ie JSE_1_6_LangTrial");
+      for (Class<?> caa: classes) {
+        constantNameOnlyLookupAssertGen_.gen(caa, System.out, ctx);
+      }
+    }
 		List<ClassAndAttributes> caAttribs = new ArrayList<ClassAndAttributes>();
 		for (Class<?> c: classes) {
 			ClassAndAttributes caa = new ClassAndAttributes(c);
 			caAttribs.add(caa);
-			if (ctx.isRunConstantGen()) {
-				constantGen.gen(caa, System.out, ctx);
+			if (ctx.isRunConstantClassAttributeMethodGen()) {
+				constantClassAttributeMethodGen.gen(caa, System.out, ctx);
 			}
 			
 		}
+		
 		if (ctx.isRunConstantTrialGen()) {
 			for (ClassAndAttributes caa: caAttribs) {
 				constantTrialGen.gen(caa, System.out, ctx);
@@ -53,6 +96,7 @@ public class GroupGen {
 				classUseTrialGen.gen(caa, System.out, ctx);
 			}
 		}
+		
 		if (ctx.isRunNameOnlyGen()) {
 			for (Class<?> caa: classes) {
 				nameOnlyGen.gen(caa, System.out, ctx);

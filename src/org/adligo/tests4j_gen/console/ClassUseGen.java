@@ -1,15 +1,14 @@
-package org.adligo.tests4j_gen;
+package org.adligo.tests4j_gen.console;
+
+import org.adligo.tests4j.shared.asserts.reference.I_ClassAttributes;
+import org.adligo.tests4j.shared.asserts.reference.I_FieldSignature;
+import org.adligo.tests4j.shared.asserts.reference.I_MethodSignature;
+import org.adligo.tests4j.shared.common.StringMethods;
 
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-
-import org.adligo.tests4j.shared.asserts.dependency.I_ClassAttributes;
-import org.adligo.tests4j.shared.asserts.dependency.I_FieldSignature;
-import org.adligo.tests4j.shared.asserts.dependency.I_MethodSignature;
-import org.adligo.tests4j.shared.common.StringMethods;
-import org.adligo.tests4j.shared.common.Tests4J_System;
 
 /**
  * this class generates a sibling
@@ -69,7 +68,7 @@ public class ClassUseGen {
 				if ("<init>".equals(method.getMethodName())) {
 					String nextLine = "\t\tobj = new " + clazz.getSimpleName() + "(";
 					if (method.getParameters() >= 1) {
-						nextLine = nextLine + Tests4J_System.lineSeperator() + "\t\t\t" +
+						nextLine = nextLine + System.lineSeparator() + "\t\t\t" +
 								getMethodParamsDefaults(method);
 					}
 					nextLine = nextLine + ");";

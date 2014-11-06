@@ -1,4 +1,4 @@
-package org.adligo.tests4j_gen;
+package org.adligo.tests4j_gen.console;
 
 import java.io.PrintStream;
 import java.math.BigDecimal;

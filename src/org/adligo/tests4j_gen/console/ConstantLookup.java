@@ -1,10 +1,10 @@
-package org.adligo.tests4j_gen;
+package org.adligo.tests4j_gen.console;
+
+import org.adligo.tests4j.models.shared.association.I_PackageConstantLookup;
+import org.adligo.tests4j.shared.common.ClassMethods;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.adligo.tests4j.models.shared.dependency.I_PackageConstantLookup;
-import org.adligo.tests4j.shared.common.ClassMethods;
 
 public class ConstantLookup {
 	private List<I_PackageConstantLookup> lookups_ = new ArrayList<I_PackageConstantLookup>();

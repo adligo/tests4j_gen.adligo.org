@@ -1,13 +1,12 @@
-package org.adligo.tests4j_gen;
+package org.adligo.tests4j_gen.console;
+
+import org.adligo.tests4j.shared.asserts.reference.I_ClassAttributes;
+import org.adligo.tests4j.shared.asserts.reference.I_FieldSignature;
+import org.adligo.tests4j.shared.asserts.reference.I_MethodSignature;
+import org.adligo.tests4j.shared.asserts.reference.MethodSignature;
 
 import java.io.PrintStream;
 import java.util.Set;
-
-import org.adligo.tests4j.shared.asserts.dependency.I_ClassAttributes;
-import org.adligo.tests4j.shared.asserts.dependency.I_FieldSignature;
-import org.adligo.tests4j.shared.asserts.dependency.I_MethodSignature;
-import org.adligo.tests4j.shared.asserts.dependency.MethodSignature;
-import org.adligo.tests4j.shared.common.Tests4J_System;
 
 /**
  * this class generates a sibling
@@ -17,7 +16,7 @@ import org.adligo.tests4j.shared.common.Tests4J_System;
  * @author scott
  *
  */
-public class ConstantGen {
+public class ConstantClassAttributeMethodGen {
 	private ConstantLookup constantLookup;
 	/**
 	 * this currently only prints
@@ -52,12 +51,12 @@ public class ConstantGen {
 				if ("<init>".equals(method.getMethodName())) {
 					String nextLine = "\t\ttoRet.addMethod(new MethodSignature(\"" + method.getMethodName() + "\"";
 					if (method.getParameters() >= 1) {
-						nextLine = nextLine + ", "  + Tests4J_System.lineSeperator() + "\t\t\t" + getMethodParamsDefaults(method);
+						nextLine = nextLine + ", "  + System.lineSeparator() + "\t\t\t" + getMethodParamsDefaults(method);
 					}
 					if (method.getReturnClassName() != null) {
 						String type = constantLookup.get(method.getReturnClassName());
 						if (type != null) {
-							nextLine = nextLine + ", "  + Tests4J_System.lineSeperator() + "\t\t\t" + type + "";
+							nextLine = nextLine + ", "  + System.lineSeparator() + "\t\t\t" + type + "";
 						}
 					}
 					nextLine = nextLine + "));";
@@ -86,12 +85,12 @@ public class ConstantGen {
 				if ( !"<init>".equals(method.getMethodName())) {
 					String nextLine = "\t\ttoRet.addMethod(new MethodSignature(\"" + method.getMethodName() + "\"";
 					if (method.getParameters() >= 1) {
-						nextLine = nextLine + ", "  + Tests4J_System.lineSeperator() + "\t\t\t" + getMethodParamsDefaults(method);
+						nextLine = nextLine + ", "  + System.lineSeparator() + "\t\t\t" + getMethodParamsDefaults(method);
 					}
 					if (method.getReturnClassName() != null) {
 						String type = constantLookup.get(method.getReturnClassName());
 						if (type != null) {
-							nextLine = nextLine + ", "  + Tests4J_System.lineSeperator() + "\t\t\t" + type + "";
+							nextLine = nextLine + ", "  + System.lineSeparator() + "\t\t\t" + type + "";
 						}
 					}
 					nextLine = nextLine + "));";
