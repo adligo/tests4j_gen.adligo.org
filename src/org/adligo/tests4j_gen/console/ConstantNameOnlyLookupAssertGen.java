@@ -21,7 +21,7 @@ public class ConstantNameOnlyLookupAssertGen {
 	public void gen(Class<?> clazz, PrintStream out, GenDepGroupContext ctx) {
 
 		out.println("    assertEquals(\"" + ConsoleGenUtils.toConstantJavaText(clazz) + 
-		    "\",map.get(\"" + clazz.getName() + "\"));");
+		    "\",ConstantsLookupInterfaceName.INSTANCE.getConstantName(\"" + clazz.getName() + "\"));");
 	}
 	
 }

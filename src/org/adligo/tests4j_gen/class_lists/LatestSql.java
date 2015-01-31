@@ -91,7 +91,7 @@ public class LatestSql extends BaseClassNameList {
     
     toRet.add( Wrapper.class);
     //classes
-    toRet.add( Date.class);
+    toRet.add( java.sql.Date.class);
     toRet.add( DriverManager.class);
     toRet.add( DriverPropertyInfo.class);
     

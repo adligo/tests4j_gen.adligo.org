@@ -7,7 +7,7 @@ To use it for;
 Java Standard Class Reference Group static String interfaces,constant lookup and tests4j trial lines;
 run JSEGroupGen, 
 feel free to modify the source code for what you need as you probably will
-since this is rarely used and NOT tested.  
+since this is rarely used and NOT currently tested.  
 
 To use it for;
 Full I_ClassAttributes like the gwt_refs.adligo.org project

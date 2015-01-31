@@ -36,6 +36,7 @@ import java.io.IOError;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.InterruptedIOException;
 import java.io.InvalidClassException;
 import java.io.InvalidObjectException;
 import java.io.LineNumberInputStream;
@@ -180,7 +181,7 @@ public class LatestIO extends BaseClassNameList {
     
     toRet.add(FileNotFoundException.class);
     
-    toRet.add(InterruptedException.class);
+    toRet.add(InterruptedIOException.class);
     toRet.add(InvalidClassException.class);
     toRet.add(InvalidObjectException.class);
     toRet.add(IOException.class);

@@ -17,10 +17,10 @@ import java.util.List;
  */
 public class GroupGen {
 	private GenDepGroupContext ctx;
-	private ConstantClassAttributeMethodGen constantClassAttributeMethodGen = new ConstantClassAttributeMethodGen();
+	private ConstantClassAttributeMethodGen constantClassAttributeMethodGen_ = new ConstantClassAttributeMethodGen();
 	
-	private ConstantTrialGen constantTrialGen = new ConstantTrialGen();
-	private ClassUseGen classUseGen = new ClassUseGen();
+	private ConstantTrialGen constantTrialGen_ = new ConstantTrialGen();
+	private ClassUseGen classUseGen_ = new ClassUseGen();
 	private ClassUseTrialGen classUseTrialGen = new ClassUseTrialGen();
 	private ConstantNameOnlyGen constantNameOnlyGen_ = new ConstantNameOnlyGen();
 	private ConstantNameOnlyAssertGen constantNameOnlyAssertGen_ = new ConstantNameOnlyAssertGen();
@@ -39,71 +39,81 @@ public class GroupGen {
 	public void gen(Collection<Class<?>> classes) {
 	  
 	  if (ctx.isRunConstantNameOnlyGen()) {
-	    System.out.println("4 interface ie I_JSE_1_6_Lang");
+	    System.out.println("isRunConstantNameOnlyGen constantNameOnlyGen_ working " + constantNameOnlyGen_.getClass());
       for (Class<?> caa: classes) {
         constantNameOnlyGen_.gen(caa, System.out, ctx);
       }
     }
 	  if (ctx.isRunConstantNameOnlyAssertGen()) {
-	    System.out.println("4 trial of interface ie I_JSE_1_6_LangTrial");
+	    System.out.println("isRunConstantNameOnlyAssertGen constantNameOnlyAssertGen_ working " + constantNameOnlyAssertGen_.getClass());
       for (Class<?> caa: classes) {
         constantNameOnlyAssertGen_.gen(caa, System.out, ctx);
       }
     }
 	  
 	  if (ctx.isRunConstantNameOnlyLookupGen()) {
-	    System.out.println("4 constant class ie JSE_1_6_Lang");
+	    System.out.println("isRunConstantNameOnlyLookupGen constantNameOnlyLookupGen_ " +
+	        "working " + constantNameOnlyLookupGen_.getClass());
       for (Class<?> caa: classes) {
         constantNameOnlyLookupGen_.gen(caa, System.out, ctx);
       }
     }
 	  
 	  if (ctx.isRunDelegateInGroupAssertGen()) {
-	    System.out.println("4 constant class ie JSE_1_6_LangTrial");
+	    System.out.println("isRunDelegateInGroupAssertGen delegateInGroupAssertGen_ " +
+	        "working " + 
+	        delegateInGroupAssertGen_.getClass());
       for (Class<?> caa: classes) {
         delegateInGroupAssertGen_.gen(caa, System.out, ctx);
       }
     }
 	  
 	  if (ctx.isRunConstantNameOnlyLookupAssertGen()) {
-	    System.out.println("4 constant class ie JSE_1_6_LangTrial");
+	    System.out.println("isRunConstantNameOnlyLookupAssertGen constantNameOnlyLookupAssertGen_ working " + 
+	        constantNameOnlyLookupAssertGen_.getClass());
       for (Class<?> caa: classes) {
         constantNameOnlyLookupAssertGen_.gen(caa, System.out, ctx);
       }
     }
-		List<ClassAndAttributes> caAttribs = new ArrayList<ClassAndAttributes>();
+	  System.out.println("constantClassAttributeMethodGen_ working " + constantClassAttributeMethodGen_.getClass());
+    List<ClassAndAttributes> caAttribs = new ArrayList<ClassAndAttributes>();
 		for (Class<?> c: classes) {
 			ClassAndAttributes caa = new ClassAndAttributes(c);
 			caAttribs.add(caa);
 			if (ctx.isRunConstantClassAttributeMethodGen()) {
-				constantClassAttributeMethodGen.gen(caa, System.out, ctx);
+				constantClassAttributeMethodGen_.gen(caa, System.out, ctx);
 			}
 			
 		}
 		
 		if (ctx.isRunConstantTrialGen()) {
-			for (ClassAndAttributes caa: caAttribs) {
-				constantTrialGen.gen(caa, System.out, ctx);
+		  System.out.println("isRunConstantTrialGen constantTrialGen_ working " + constantTrialGen_.getClass());
+      for (ClassAndAttributes caa: caAttribs) {
+				constantTrialGen_.gen(caa, System.out, ctx);
 			}
 		}
 		if (ctx.isRunUseMockGen()) {
-			for (ClassAndAttributes caa: caAttribs) {
-				classUseGen.gen(caa, System.out, ctx);
+		  System.out.println("isRunUseMockGen classUseGen_ working " + classUseGen_.getClass());
+      for (ClassAndAttributes caa: caAttribs) {
+				classUseGen_.gen(caa, System.out, ctx);
 			}
 		}
 		if (ctx.isRunUseTrialGen()) {
-			for (ClassAndAttributes caa: caAttribs) {
+		  System.out.println("isRunUseTrialGen classUseTrialGen working " + classUseTrialGen.getClass());
+      for (ClassAndAttributes caa: caAttribs) {
 				classUseTrialGen.gen(caa, System.out, ctx);
 			}
 		}
 		
 		if (ctx.isRunNameOnlyGen()) {
-			for (Class<?> caa: classes) {
+		  System.out.println("isRunNameOnlyGen nameOnlyGen working " + nameOnlyGen.getClass());
+      for (Class<?> caa: classes) {
 				nameOnlyGen.gen(caa, System.out, ctx);
 			}
 		}
 		if (ctx.isRunNameOnlyAssertGen()) {
-			for (Class<?> caa: classes) {
+		  System.out.println("isRunNameOnlyAssertGen nameOnlyAssertGen working " + nameOnlyAssertGen.getClass());
+      for (Class<?> caa: classes) {
 				nameOnlyAssertGen.gen(caa, System.out, ctx);
 			}
 		}

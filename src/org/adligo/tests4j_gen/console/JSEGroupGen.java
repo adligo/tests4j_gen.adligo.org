@@ -1,8 +1,9 @@
 package org.adligo.tests4j_gen.console;
 
+import org.adligo.tests4j.models.shared.reference_groups.jse.JSE_IO;
 import org.adligo.tests4j.models.shared.reference_groups.jse.JSE_Lang;
 import org.adligo.tests4j.models.shared.reference_groups.jse.JSE_Util;
-import org.adligo.tests4j_gen.class_lists.LatestUtilConcurrent;
+import org.adligo.tests4j_gen.class_lists.LatestNIOFile;
 
 
 public class JSEGroupGen {
@@ -17,16 +18,19 @@ public class JSEGroupGen {
 		ctx.setRunNameOnlyGen(true);
 		ctx.setRunUseMockGen(false);
 		ctx.setRunConstantTrialGen(false);
+		ctx.setRunNameOnlyGen(false);
+		ctx.setRunNameOnlyAssertGen(false);
 		//ctx.setExtraTrialAnnotations("@SuppressOutput");
 		
 		
 		ConstantLookup cl = ctx.getConstantLookup();
 		cl.addLookups(JSE_Lang.INSTANCE);
 		cl.addLookups(JSE_Util.INSTANCE);
+		cl.addLookups(JSE_IO.INSTANCE);
 		gg.setCtx(ctx);
 		//ctx.setRunConstantGen(false);
 		//ctx.setRunConstantTrialGen(false);
-		gg.gen(LatestUtilConcurrent.CLASSES);
+		gg.gen(LatestNIOFile.getClasses());
 		//gg.gen(getAnnot());
 		//gg.gen(getMath());
 		//gg.gen(getSQL());
